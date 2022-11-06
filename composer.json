@@ -15,7 +15,8 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.0",
+        "brunocfalcao/eduka-nereus": "dev-master"
     },
     "autoload": {
         "psr-4": {
