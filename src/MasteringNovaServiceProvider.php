@@ -8,7 +8,8 @@ class MasteringNovaServiceProvider extends EdukaServiceProvider
 {
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'course');
+        $this->customViewNamespace(__DIR__.'/../resources/views', 'course');
+
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
         parent::boot();

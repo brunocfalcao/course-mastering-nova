@@ -6,6 +6,6 @@
 	<title>Prelaunch</title>
 </head>
 <body>
-This is a prelaunch.
+@dd($course)
 </body>
 </html>
