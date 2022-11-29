@@ -16,7 +16,9 @@
     ],
     "require": {
         "php": "^8.0",
-        "brunocfalcao/eduka-nereus": "dev-master"
+        "brunocfalcao/eduka-nereus": "dev-master",
+        "brunocfalcao/blade-feather-icons": "^2.0",
+        "codeat3/blade-eos-icons": "^1.9"
     },
     "autoload": {
         "psr-4": {
