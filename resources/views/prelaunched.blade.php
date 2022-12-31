@@ -2,16 +2,19 @@
     <x-eduka::head>
     <title>Mastering Nova</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
-    @vite('resources/vendor/mastering-nova/css/app.css')
+    @vite('resources/vendor/mastering-nova/css/perfect-scrollbar.css')
+    @vite('resources/vendor/mastering-nova/css/owl.carousel.min.css')
+    @vite('resources/vendor/mastering-nova/css/owl.theme.default.min.css')
+    @vite('resources/vendor/mastering-nova/css/app.tailwind.css')
     </x-eduka::head>
     <x-eduka::body class="antialiased bg-body text-body font-body">
-
         <div>
+            <!-- hero section -->
             <section class="skewed-bottom-right">
                 <!-- Navigation bar -->
                 <nav class="fixed w-full px-6 py-6 flex justify-between items-center bg-blue-800 shadow-inner z-50">
                     <a class="text-white text-3xl font-bold leading-none" href="#">
-                    <img class="h-12" src="/vendor/mastering-nova/images/logo.png" alt="" width="auto">
+                    <img class="h-12" src="{{ Vite::asset('resources/vendor/mastering-nova/images/logo.png') }}" alt="" width="auto">
                     </a>
                     <div class="lg:hidden">
                         <button class="navbar-burger flex items-center text-white p-3">
@@ -52,10 +55,6 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
                             </svg>
                         </li>
-                        <!-- {{--
-                        <li><a class="button button-primary-blue" href="{{ route('checkout.paylink') }}">Buy now - {{ Payment::data('checkout.currency') }} {{ Payment::data('checkout.price') }}</a></li>
-                        <li><a class="button button-secondary-blue" href="{{ route('login') }}">Login</a></li>
-                        --}}-->
                     </ul>
                     <a class="hidden lg:inline-block py-2 px-6 bg-white hover:bg-gray-50 text-sm text-blue-600 font-bold rounded-l-xl rounded-t-xl transition duration-200" target="_blank" href="mailto:bruno@masteringnova.com">Doubts?</a>
                 </nav>
@@ -85,19 +84,18 @@
                                     <div class="max-w-sm mx-auto lg:mx-0">
                                         <p class="mb-6 text-blue-200 leading-loose">The official Laravel Nova course, that will make you a master on all the hidden gems that Nova offers you, for both ORION and SILVER SURFER versions!</p>
                                         <div>
-                                            <a class="inline-block mb-3 lg:mb-0 lg:mr-1 w-full lg:w-auto button button-primary-blue text-base" href="#">Buy now - 80 USD</a>
-                                            <a class="inline-block w-full lg:w-auto button button-secondary-blue text-base" href="#">Watch the videos</a>
+                                            <a class="inline-block mb-3 lg:mb-0 lg:mr-1 w-full lg:w-auto button button-primary-blue text-base" href="#">Subscribe for a discount</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="w-full lg:w-1/2 px-4 flex items-center justify-center">
                                 <div class="relative" style="z-index: 0;">
-                                    <img class="h-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none" src="/vendor/mastering-nova/images/hero.jpg" alt="">
-                                    <img class="hidden md:block absolute" style="top:-2rem; right: 3rem; z-index: -1;" src="/vendor/mastering-nova/images/blue-dark-up.svg" alt="">
-                                    <img class="hidden md:block absolute" style="bottom:-2rem; right: -2rem; z-index: -1;" src="/vendor/mastering-nova/images/wing-blue-down.svg" alt="">
-                                    <img class="hidden md:block absolute" style="top:3rem; right: -3rem; z-index: -1;" src="/vendor/mastering-nova/images/bullets-blue-right.svg" alt="">
-                                    <img class="hidden md:block absolute" style="bottom:2.5rem; left: -4.5rem; z-index: -1;" src="/vendor/mastering-nova/images/bullets-blue-left.svg" alt="">
+                                    <img class="h-128 w-full max-w-lg object-cover rounded-3xl md:rounded-br-none" src="{{ Vite::asset('resources/vendor/mastering-nova/images/hero.jpg') }}" alt="">
+                                    <img class="hidden md:block absolute" style="top:-2rem; right: 3rem; z-index: -1;" src="{{ Vite::asset('resources/vendor/mastering-nova/images/blue-dark-up.svg') }}" alt="">
+                                    <img class="hidden md:block absolute" style="bottom:-2rem; right: -2rem; z-index: -1;" src="{{ Vite::asset('resources/vendor/mastering-nova/images/wing-blue-down.svg') }}" alt="">
+                                    <img class="hidden md:block absolute" style="top:3rem; right: -3rem; z-index: -1;" src="{{ Vite::asset('resources/vendor/mastering-nova/images/bullets-blue-right.svg') }}" alt="">
+                                    <img class="hidden md:block absolute" style="bottom:2.5rem; left: -4.5rem; z-index: -1;" src="{{ Vite::asset('resources/vendor/mastering-nova/images/bullets-blue-left.svg') }}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -114,7 +112,7 @@
                     <nav class="relative flex flex-col py-6 px-6 h-full w-full bg-white border-r overflow-y-auto">
                         <div class="flex items-center mb-8">
                             <a class="mr-auto text-3xl font-bold leading-none" href="#">
-                            <img class="h-10" src="/vendor/mastering-nova/images/logo-navbar-dark.png" alt="" width="auto">
+                            <img class="h-10" src="{{ Vite::asset('resources/vendor/mastering-nova/images/logo-navbar-dark.png') }}" alt="" width="auto">
                             </a>
                             <button class="navbar-close">
                                 <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor">
@@ -145,8 +143,290 @@
                     </nav>
                 </div>
             </section>
+            <!-- /hero section -->
+
+            <!-- testimonials -->
+            <section id="testimonials">
+                <div class="skew skew-top mr-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 10 0 10"></polygon>
+                    </svg>
+                </div>
+                <div class="skew skew-top ml-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 10 10 0 10 10"></polygon>
+                    </svg>
+                </div>
+                <div class="py-20 bg-gray-50 radius-for-skewed">
+                    <div class="container mx-auto px-4">
+                        <!-- Owl Carousel -->
+                        <div class="owl-carousel owl-theme">
+@php
+// Create a structure of testimonials. Later on this should be made dynamically via de database.
+$tweets = [
+
+    [
+        'image' => 'resources/vendor/mastering-nova/images/david-hemphill.jpg',
+        'account' => 'davidhemphill',
+        'baseline' => 'Laravel Nova co-creator',
+        'tweet' => "I'd probably pick up this in-depth course on Laravel Nova if I was you. Looks like there's stuff in there I didn't even know was possible!"
+    ],
+    [
+        'image' => 'resources/vendor/mastering-nova/images/christoph-rumpel.jpg',
+        'account' => 'christophrumpel',
+        'baseline' => 'Laravel Core Adventures Creator',
+        'tweet' => "Been following Bruno Falcao's course process and I'm happy for him for the launch! It's also great to finally have a more in-depth Laravel Nova course. Congrats!"
+    ],
+    [
+        'image' => 'resources/vendor/mastering-nova/images/caneco.jpg',
+        'account' => 'caneco',
+        'baseline' => 'Laracon Speaker',
+        'tweet' => "If you are trying to code #LaravelNova, it's far more easy to learn from someone that it's rock-coding with Nova since the beginning. Explore the universe of Laravel Nova with @brunocfalcao. Don't be afraid to hit that [Buy] button!"
+    ],
+    [
+        'image' => 'resources/vendor/mastering-nova/images/patrick-brouwers.jpg',
+        'account' => 'patrickbrouwers',
+        'baseline' => 'Laravel Excel creator',
+        'tweet' => "If you wanna get the most out of Laravel Nova, have a look at Bruno Falcao's new course!"
+    ],
+];
+@endphp
+                        @foreach($tweets as $tweet)
+                        <!-- tweet item -->
+                        <div class="max-w-6xl p-4 flex flex-wrap justify-center items-center">
+                            <div class="mb-6 w-full lg:w-1/3 text-center">
+                                <div class="w-32 h-32 mx-auto rounded-full">
+                                    <img class="w-32 h-32 rounded-full object-cover" src="{{ Vite::asset($tweet['image']) }}" alt="">
+                                </div>
+                                <h4><a class="link-blue" target="_blank" href="https://twitter.com/{{ $tweet['account'] }}">{{ "@" . $tweet['account'] }}</a></h4>
+                                <p class="text-blue-800 font-bold">{{ $tweet['baseline'] }}</p>
+                            </div>
+                            <div class="w-full lg:w-2/3">
+                                <svg class="mb-4 text-green-600 h-7" viewbox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.2418 12.749C9.45369 12.522 8.66554 12.4069 7.89887 12.4069C6.71496 12.4069 5.72709 12.6775 4.96109 13.0088C5.69957 10.3053 7.47358 5.6405 11.0075 5.11517C11.3348 5.0665 11.603 4.82986 11.6923 4.51131L12.4646 1.74875C12.5298 1.51512 12.4912 1.26505 12.3579 1.06231C12.2246 0.859563 12.0105 0.724288 11.7705 0.691393C11.5097 0.655812 11.2438 0.637686 10.9803 0.637686C6.73846 0.637686 2.53756 5.06516 0.764895 11.4046C-0.275679 15.1238 -0.580802 20.7154 1.98237 24.2349C3.41668 26.2043 5.50924 27.2559 8.20198 27.361C8.21305 27.3613 8.2238 27.3616 8.23487 27.3616C11.5573 27.3616 14.5035 25.1241 15.3997 21.9208C15.9351 20.0058 15.6931 17.9975 14.7176 16.2644C13.7526 14.5508 12.1632 13.3018 10.2418 12.749Z" fill="currentColor"></path>
+                                    <path d="M31.0396 16.2648C30.0746 14.5508 28.4852 13.3018 26.5638 12.749C25.7757 12.522 24.9875 12.4069 24.2212 12.4069C23.0373 12.4069 22.0491 12.6775 21.2831 13.0088C22.0215 10.3053 23.7955 5.6405 27.3298 5.11517C27.6571 5.0665 27.9249 4.82986 28.0146 4.51131L28.7869 1.74875C28.8521 1.51512 28.8135 1.26505 28.6802 1.06231C28.5473 0.859563 28.3331 0.724288 28.0928 0.691393C27.8323 0.655812 27.5664 0.637686 27.3026 0.637686C23.0608 0.637686 18.8599 5.06516 17.0869 11.4046C16.0466 15.1238 15.7415 20.7154 18.305 24.2356C19.739 26.2046 21.8319 27.2566 24.5243 27.3613C24.5354 27.3616 24.5461 27.362 24.5575 27.362C27.8796 27.362 30.8261 25.1244 31.7224 21.9211C32.2571 20.0061 32.0147 17.9975 31.0396 16.2648Z" fill="currentColor"></path>
+                                </svg>
+                                <h3 class="mb-6 text-2xl lg:text-3xl font-bold font-heading">{{ $tweet['tweet'] }}</h3>
+                            </div>
+                        </div>
+                        <!-- /tweet item -->
+                        @endforeach
+                        </div>
+                        <!-- /Owl Carousel -->
+                    </div>
+                </div>
+                <div class="skew skew-bottom mr-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 0 0 10"></polygon>
+                    </svg>
+                </div>
+                <div class="skew skew-bottom ml-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 0 10 10"></polygon>
+                    </svg>
+                </div>
+            </section>
+            <!-- /testimonials -->
+
+            <!-- features -->
+            <section id="features">
+                <div class="skew skew-top mr-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-blue-800" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 10 0 10"></polygon>
+                    </svg>
+                </div>
+                <div class="skew skew-top ml-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-blue-800" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 10 10 0 10 10"></polygon>
+                    </svg>
+                </div>
+                <div class="py-20 bg-blue-800 radius-for-skewed" id="features">
+                    <div class="container mx-auto px-4">
+                        <div class="mb-16 mx-auto text-center">
+                            <span class="text-blue-600 font-bold">Learn everything about Laravel Nova</span>
+                            <h2 class="text-4xl md:text-5xl font-bold text-white">Nova explained fully end-to-end using real coding examples</h2>
+                        </div>
+                        <div class="flex flex-wrap -mx-4">
+                            <div class="mb-12 lg:mb-0 w-full md:w-1/2 lg:w-1/4 px-4">
+                                <span class="mb-4 md:mb-6 inline-block p-3 bg-blue-600 text-blue-200 rounded">
+                                    <x-eos-surfing class="h-12 w-12" />
+                                </span>
+                                <h4 class="mb-4 text-2xl font-bold font-heading text-white">Orion (3.x) and Silver Surfer (4.x) versions</h4>
+                                <p class="text-gray-500 leading-loose">Fusce quam tellus, placerat eu metus ut, viverra aliquet purus. Suspendisse potenti. Nulla non nibh feugiat.</p>
+                            </div>
+                            <div class="mb-12 lg:mb-0 w-full md:w-1/2 lg:w-1/4 px-4">
+                                <span class="mb-4 md:mb-6 inline-block p-3 bg-blue-600 text-blue-200 rounded">
+                                    <x-eos-neural-network class="h-12 w-12" />
+                                </span>
+                                <h4 class="mb-4 text-2xl font-bold font-heading text-white">All knowledge areas fully covered</h4>
+                                <p class="text-gray-500 leading-loose">Ut tempus tellus ac nisi vestibulum tempus. Nunc tincidunt lectus libero, ac ultricies augue elementum at.</p>
+                            </div>
+                            <div class="mb-12 lg:mb-0 w-full md:w-1/2 lg:w-1/4 px-4">
+                                <span class="mb-4 md:mb-6 inline-block p-3 bg-blue-600 text-blue-200 rounded">
+                                    <x-eos-movie-filter class="h-12 w-12" />
+                                </span>
+                                <h4 class="mb-4 text-2xl font-bold font-heading text-white">Pristine video and sound quality</h4>
+                                <p class="text-gray-500 leading-loose">Donec ut ligula nunc. Mauris blandit vel est et facilisis. Integer sapien felis, aliquet at posuere et, porttitor quis ligula.</p>
+                            </div>
+                            <div class="w-full md:w-1/2 lg:w-1/4 px-4">
+                                <span class="mb-4 md:mb-6 inline-block p-3 bg-blue-600 text-blue-200 rounded">
+                                    <x-eos-thumb-up class="h-12 w-12" />
+                                </span>
+                                <h4 class="mb-4 text-2xl font-bold font-heading text-white">Pay once, get updated forever</h4>
+                                <p class="text-gray-500 leading-loose">Duis ut facilisis orci. Morbi lacinia nunc a augue eleifend, sed placerat ex faucibus. Duis ante arcu, pretium ac luctus vulputate.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skew skew-bottom mr-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-blue-800" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 0 0 10"></polygon>
+                    </svg>
+                </div>
+                <div class="skew skew-bottom ml-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-blue-800" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 0 10 10"></polygon>
+                    </svg>
+                </div>
+            </section>
+            <!-- /features -->
+
+            <!-- Features slideshow -->
+            <section>
+                <div class="skew skew-top mr-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 10 0 10"></polygon>
+                    </svg>
+                </div>
+                <div class="skew skew-top ml-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 10 10 0 10 10"></polygon>
+                    </svg>
+                </div>
+                <div class="py-20 bg-gray-50 radius-for-skewed">
+                    <div class="container mx-auto px-4">
+                        <div class="owl-carousel owl-theme">
+                            <!-- Slideshow piece 1 -->
+                            <div class="relative flex">
+                                <div class="w-full xl:w-4/5 xl:ml-auto">
+                                    <img class="md:max-w-xl xl:max-w-4xl mx-auto relative object-cover rounded" src="https://images.unsplash.com/photo-1489493512598-d08130f49bea?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1048&amp;q=80" alt="">
+                                    <div class="xl:absolute top-0 left-0 mt-12 xl:mt-20 max-w-xl mx-auto xl:mx-0 p-6 xl:py-24 rounded bg-white border-gray-50 shadow text-center">
+                                        <span class="font-bold text-blue-600">The power of the course</span>
+                                        <h2 class="text-5xl font-bold font-heading">Build &amp; Launch without problems</h2>
+                                        <p class="max-w-xs mx-auto text-gray-500 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur nisl sodales egestas lobortis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Slideshow piece -->
+
+                            <!-- Slideshow piece 2 -->
+                            <div class="relative flex">
+                                <div class="w-full xl:w-4/5 xl:ml-auto">
+                                    <img class="md:max-w-xl xl:max-w-4xl mx-auto relative object-cover rounded" src="https://images.unsplash.com/photo-1489493512598-d08130f49bea?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1048&amp;q=80" alt="">
+                                    <div class="xl:absolute top-0 left-0 mt-12 xl:mt-20 max-w-xl mx-auto xl:mx-0 p-6 xl:py-24 rounded bg-white border-gray-50 shadow text-center">
+                                        <span class="font-bold text-blue-600">Dolor sit amet consectutar</span>
+                                        <h2 class="text-5xl font-bold font-heading">Build &amp; Launch without problems</h2>
+                                        <p class="max-w-xs mx-auto text-gray-500 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur nisl sodales egestas lobortis.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Slideshow piece 2 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="skew skew-bottom mr-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 0 0 10"></polygon>
+                    </svg>
+                </div>
+                <div class="skew skew-bottom ml-for-radius">
+                    <svg class="h-8 md:h-12 lg:h-20 w-full text-gray-50" viewbox="0 0 10 10" preserveaspectratio="none">
+                        <polygon fill="currentColor" points="0 0 10 0 10 10"></polygon>
+                    </svg>
+                </div>
+            </section>
+            <!-- /Features slideshow -->
+
+            <!-- cta -->
+            <section class="py-20 bg-blue-800">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-wrap items-center justify-center">
+                        <div class="w-auto mb-10 lg:mb-0 lg:mr-8 py-8 px-10 rounded">
+                            <img class="h-16" src="/vendor/mastering-nova/images/logo-navbar-white.png" alt="">
+                        </div>
+                        <div class="w-full lg:w-auto mb-10 lg:mb-0 text-center lg:text-left">
+                            <h2 class="max-w-xl mx-auto lg:mx-0 mb-2 text-4xl lg:text-5xl text-white font-bold font-heading">Ready to discover Nova?</h2>
+                            <p class="max-w-xl mx-auto lg:mx-0 text-blue-200 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque efficitur nisl sodales egestas lobortis.</p>
+                        </div>
+                        <div class="w-full lg:w-auto lg:ml-auto text-center"><a class="inline-block leading-loose button button-primary-blue text-xl" href="#">Buy now - USD 80</a></div>
+                    </div>
+                </div>
+            </section>
+            <!-- /cta -->
+
+
+
+
+
         </div>
 
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous">
+        </script>
+
         @vite('resources/vendor/mastering-nova/js/app.js')
+        @vite('resources/vendor/mastering-nova/js/retina.min.js')
+        @vite('resources/vendor/mastering-nova/js/owl.carousel.min.js')
+        @vite('resources/vendor/mastering-nova/js/template.js')
+        @vite('resources/vendor/mastering-nova/js/move-to-min.js')
+        <script type="text/javascript">
+            $( document ).ready(function() {
+
+                $('.owl-carousel').owlCarousel({
+                    loop:true,
+                    items:1,
+                    nav:false,
+                    autoplay: true
+                });
+
+                const easeFunctions = {
+
+                    easeInQuad: function (t, b, c, d) {
+                        t /= d;
+                        return c * t * t + b;
+                    },
+
+                    easeOutQuad: function (t, b, c, d) {
+                        t /= d;
+                        return -c * t * (t - 2) + b;
+                    },
+
+                    linear: function (t, b, c, d) {
+                        return c*t/d + b;
+                    },
+
+                    easeInOutQuad: function (t, b, c, d) {
+                        t /= d/2;
+                        if (t < 1) return c/2*t*t + b;
+                        t--;
+                        return -c/2 * (t*(t-2) - 1) + b;
+                    }
+                };
+
+                const moveTo = new MoveTo(
+                    {
+                        ease: "easeInOutQuad",
+                    },
+                    easeFunctions
+                );
+
+                const triggers = document.getElementsByClassName("js-trigger");
+                for (var i = 0; i < triggers.length; i++) {
+                    moveTo.registerTrigger(triggers[i]);
+                }
+            });
+        </script>
     </x-eduka::body>
 </x-eduka::site>

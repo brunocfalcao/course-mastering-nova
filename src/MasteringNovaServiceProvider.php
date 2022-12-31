@@ -3,6 +3,7 @@
 namespace MasteringNova;
 
 use Eduka\Abstracts\Classes\EdukaServiceProvider;
+use MasteringNova\Commands\ETLData;
 
 class MasteringNovaServiceProvider extends EdukaServiceProvider
 {
@@ -18,5 +19,12 @@ class MasteringNovaServiceProvider extends EdukaServiceProvider
     public function register()
     {
         parent::register();
+    }
+
+    protected function registerCommands()
+    {
+        $this->commands([
+            ETLData::class,
+        ]);
     }
 }
